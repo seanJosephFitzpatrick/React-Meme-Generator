@@ -18,7 +18,7 @@ function FormComponent(props) {
           value={props.bottomText}
           onChange={props.handleChange}
         />
-        <button>Generate</button>
+        <button onClick={props.handleClick}>Generate</button>
       </form>
     </div>
   );

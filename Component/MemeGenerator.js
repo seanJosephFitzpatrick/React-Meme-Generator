@@ -28,10 +28,22 @@ class MemeGenerator extends Component {
     this.setState({ [name]: value });
   };
 
+  handleClick = event => {
+    event.preventDefault();
+    const randomNum = Math.floor(Math.random() * this.state.allMemeImgs.length);
+    const randMemeImg = this.state.allMemeImgs[randomNum].url;
+    this.setState({ randomImg: randMemeImg });
+  };
+
   render() {
     return (
       <div>
-        <FormComponent data={this.state} handleChange={this.handleChange} />;
+        <FormComponent
+          data={this.state}
+          handleChange={this.handleChange}
+          handleClick={this.handleClick}
+        />
+        ;
         <ImageComponent data={this.state} />
       </div>
     );
