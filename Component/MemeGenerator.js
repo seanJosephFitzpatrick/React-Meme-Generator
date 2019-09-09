@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormComponent } from "../Imports/imports";
+import { FormComponent, ImageComponent } from "../Imports/imports";
 
 class MemeGenerator extends Component {
   constructor() {
@@ -29,7 +29,12 @@ class MemeGenerator extends Component {
   };
 
   render() {
-    return <FormComponent data={this.state} handleChange={this.handleChange} />;
+    return (
+      <div>
+        <FormComponent data={this.state} handleChange={this.handleChange} />;
+        <ImageComponent data={this.state} />
+      </div>
+    );
   }
 }
 
