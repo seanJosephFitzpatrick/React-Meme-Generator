@@ -23,8 +23,13 @@ class MemeGenerator extends Component {
       });
   }
 
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
-    return <FormComponent data={this.state} />;
+    return <FormComponent data={this.state} handleChange={this.handleChange} />;
   }
 }
 
